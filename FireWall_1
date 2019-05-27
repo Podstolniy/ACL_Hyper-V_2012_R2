@@ -8,4 +8,4 @@ ExtendedACL: Open one port “80”
 Add-VMNetWorkAdapterExtendedACL -VMName test -LocalIPAddress 192.168.10.10 -Direction Inbound -Protocol “TCP” -LocalPort “80” -Action Allow -Weight 10 -Stateful $true
 ******************
 Get-VMNetWorkAdapterExtendedACL | Remove-VMNetWorkAdapterExtendedACL 	(Remove)
-Get-VMNetWorkAdapterExtendedACL 	
+Get-VMNetWorkAdapterExtendedACL 	                                    (Show)
