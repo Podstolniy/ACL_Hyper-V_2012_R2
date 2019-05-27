@@ -1,0 +1,11 @@
+ExtendedACL: Block Inbound and Outbound on ip 192.168.10.10 (name Weight 1)
+------------------
+Add-VMNetWorkAdapterExtendedACL -VMName test -LocalIPAddress 192.168.10.10 -Direction Inbound -Action Deny -Weight 1
+Add-VMNetWorkAdapterExtendedACL -VMName test -LocalIPAddress 192.168.10.10 -Direction Outbound -Action Deny -Weight 1
+******************
+ExtendedACL: Open one port “80”
+------------------
+Add-VMNetWorkAdapterExtendedACL -VMName test -LocalIPAddress 192.168.10.10 -Direction Inbound -Protocol “TCP” -LocalPort “80” -Action Allow -Weight 10 -Stateful $true
+******************
+Get-VMNetWorkAdapterExtendedACL | Remove-VMNetWorkAdapterExtendedACL 	(Remove)
+Get-VMNetWorkAdapterExtendedACL 	
